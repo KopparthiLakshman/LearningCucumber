@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [basicTestngXML]">
+  <parameter name="password" value="Password@1234"/>
+  <parameter name="UserName" value="Lakshman"/>
+  <test thread-count="5" name="dependsOnMethodS(failed)">
+    <classes>
+      <class name="testNGPack.DependsOnMethodInTestNg">
+        <methods>
+          <include name="LogOut"/>
+          <include name="LogIn"/>
+          <include name="Test"/>
+        </methods>
+      </class> <!-- testNGPack.DependsOnMethodInTestNg -->
+    </classes>
+  </test> <!-- dependsOnMethodS(failed) -->
+</suite> <!-- Failed suite [basicTestngXML] -->
