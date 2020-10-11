@@ -19,6 +19,9 @@ public class WebdriverManagerCheck {
 //		driver.manage().window().fullscreen();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		WebDriverWait wait = new WebDriverWait(driver, 30);
+//		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(By.id("Xpath")));
+		
 		driver.get("http://www.google.com");
 		driver.switchTo().newWindow(WindowType.TAB);
 		driver.get("http://www.google.com");

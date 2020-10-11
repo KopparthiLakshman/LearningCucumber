@@ -2,7 +2,7 @@ Feature: Login into facebook application
 
 Background:
 And Open chrome browser
-@SmokeTest
+@Enbd2End
 Scenario Outline: scenario description
     Given Launch url "Testurl2" in browser
     When enter valid "<username>" and "<password>"
@@ -13,10 +13,15 @@ Scenario Outline: scenario description
     | laxman2.kumar@gmail.com | cancel |
 #    | maltrading@gmail.com | logout |
  
-@SmokeTest
+@RegressionTest
 Scenario: scenario description
     Given Launch url "URL" in browser
     Then close all instances
-
-	
+    
+@SmokeTest
+Scenario: To check the list of string values
+	Given the following animals:
+  | cow   | cow1   |
+  | horse | horse1 |
+  | sheep | sheep1 |
 	

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -42,7 +41,7 @@ public class TestDisplayCustomer {
 		customerForm.setEmail(email);
 		customerForm.submitForm();
 		DisplayCustomer displayCustomer = PageFactory.initElements(webdriver, DisplayCustomer.class);
-		new WebDriverWait(webdriver, 10L);
+//		new WebDriverWait(webdriver, 10L);
 		assertEquals(REGISTRATION_SUCCESS_MSG, displayCustomer.getTitle());
 		assertEquals(name + " " + age, displayCustomer.getName());
 		assertEquals(age, displayCustomer.getAge());

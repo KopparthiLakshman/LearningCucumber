@@ -22,7 +22,7 @@ public class Mouse_hover {
 		driver.quit();
 		
 		Actions act = new Actions(driver);
-		
+		act.build().perform();
 	
 	}
 

@@ -1,5 +1,8 @@
 package steps;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -9,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import com.properties.DefaultProperties;
 
 import beforeClass.intiateDriver;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -29,7 +34,16 @@ public class StepDefinition extends DefaultProperties {
 		driver = intiateDriver.getChromerDriver();
 	}
 	
-	
+	@Given("the following animals:")
+	public void the_following_animals(Map<String,String> dataTable ) {
+
+		Iterator<Entry<String, String>> iterator = dataTable.entrySet().iterator();
+		
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next().getValue());
+		}
+	}
+
 	@Given("^Launch url \"([^\"]*)\" in browser$")
 	public void launchUrl(String url) throws Exception {
 		
@@ -53,5 +67,17 @@ public class StepDefinition extends DefaultProperties {
 		Thread.sleep(2000);
 		driver.quit();
 	}
+	
+	@After
+	public void Quitallinstances(){
+		driver.quit();
+	}
+
+	
+	@AfterStep
+	public void AfterEveryStep(){
+		System.out.println("Execution of hook after every step");
+	}
+
 	
 }

@@ -19,7 +19,11 @@ public class WriteIntoExcelFile {
 		XSSFWorkbook wbook = new XSSFWorkbook(inputStream);
 //		XSSFSheet sheet = wbook.createSheet();
 		XSSFSheet sheet = wbook.getSheetAt(0);
-
+		
+//		XSSFSheet sheet2 = wbook.getSheet("Sheet1");
+//		sheet2.getRow(0).
+		
+		
 		int rowCount = sheet.getLastRowNum();
 		System.out.println("Row count in excel :" + rowCount);
 

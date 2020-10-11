@@ -4,15 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.google.common.base.Function;
 
 public class Wait_in_selenium_Scroll_to_view {
 
@@ -29,9 +22,9 @@ public class Wait_in_selenium_Scroll_to_view {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		/**Explicit webdriver wait in selenium */
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(By.id("id")));
-		ele.click();
+//		WebDriverWait wait = new WebDriverWait(driver, 30);
+//		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(By.id("id")));
+//		ele.click();
 		
 		/** how to define pooling in java using Fluentwait */
 		
