@@ -14,7 +14,7 @@ Scenario Outline: scenario description
 #    | maltrading@gmail.com | logout |
  
 @RegressionTest
-Scenario: scenario description
+Scenario: scenario description for Regression Test
     Given Launch url "URL" in browser
     Then close all instances
     
