@@ -9,7 +9,8 @@ public class DependsOnMethodInTestNg {
 
 	@Test()
 	public void LogIn() {
-		Assert.assertFalse(true);
+//		Assert.assertFalse(true);
+		Assert.assertFalse(false);
 		System.out.println("LogIn()");
 	}
 

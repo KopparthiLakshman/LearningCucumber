@@ -41,8 +41,6 @@ public class Excel_Currency_converter {
 		createCell.setCellValue("Fisrt Data to input");
 		workbook.write(file_FOS);
 		
-		
-
 		//		  if (excelFilePath.endsWith("xlsx")) {
 		//		        workbook = new XSSFWorkbook();
 		//		    } else if (excelFilePath.endsWith("xls")) {

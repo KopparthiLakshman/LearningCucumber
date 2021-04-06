@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNGPack.DataPorviderIntestNg">
+      <class name="testNGPack.DependsOnMethodInTestNg">
         <methods>
-          <include name="test1"/>
+          <include name="LogOut"/>
+          <include name="LogIn"/>
+          <include name="Test"/>
         </methods>
-      </class> <!-- testNGPack.DataPorviderIntestNg -->
+      </class> <!-- testNGPack.DependsOnMethodInTestNg -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

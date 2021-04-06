@@ -39,7 +39,7 @@ public class Questions {
 
 	public static void main(String[] args) {
 
-		/**Locators in selenium : 
+		/**Locators in selenium 8 : 
 		 * id
 		 * Name
 		 * ClassName
@@ -55,20 +55,65 @@ public class Questions {
 		 * 	-	Input[id*='userName']
 		 * Linkedtext
 		 * PartialLinkedtext
-		 * */
 
+		Absolute XPath  - /html/body/div[2]/div[1]/div/h4[1]/b/html[1]/body[1]/div[2]/div[1]/div[1]/h4[1]/b[1]
+		Relative Xpath - //div[2]/div[1]/div[1]/h4[1]/b[1]
+		Xpath=	//input[@name='uid']
+		Xpath=	//input[@type='text']				
+		Xpath=	//label[@id='message23']
+		Xpath=	//input[@value='RESET']
+		Xpath=	//*[@class='barone']
+		Xpath=	//a[@href='http://demo.guru99.com/']
+		Xpath= 	//img[@src='//cdn.guru99.com/images/home/java.png']
 
+		Xpath=	//*[contains(@name,'btn')]
+
+		Xpath=	//*[contains(text(),'here')]
+
+		Xpath=	//*[@type='submit' or @name='btnReset']
+		Xpath=	//*[@type='submit' and @name='btnReset']
+
+		Xpath=	//label[starts-with(@id,'message')]
+
+		Xpath=	//td[text()='UserID']
+		
+		 * Different Type of Axes method for defining  the Xpath
+		 * 
+		 * Child::
+		 * Following::
+		 * Following-sibling
+		 * Parent::
+		 * Ancestor:: 
+		 * Preceding::
+		 * Preceding-sibling
+		 * Descendant::
+		 * 
+
+		driver.findElement(By.xpath("@id[name='Submit']//following-sibling::td[2]]"));
+
+		Xpath=//*[text()='Enterprise Testing']//ancestor::div
+
+		driver.findElement(By.xpath("@id[name='Submit']//child::td[2]]"));
+
+		driver.findElement(By.xpath("Xpath=//*[@id='rt-feature']//parent::div"));
+
+		Xpath=//*[@type='submit']//preceding::input		
+
+		driver.findElement(By.xpath("@id[name='Submit']//preceeding-sibling::td[2]]"));
+
+		Xpath=//*[@id='rt-feature']//descendant::a[1]
+	* */
+
+		
 		WebDriver driver ;
 		System.setProperty("webdriver.chrome.driver", "D:\\EclipseWorkSpace_01_03_2015\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-
 		driver.manage().window().maximize();
-
+		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(""))));
-
 
 		Wait<WebDriver> waitF = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(30))
@@ -79,13 +124,11 @@ public class Questions {
 				.ignoring(ElementNotSelectableException.class)
 				.ignoring(ElementNotVisibleException.class);
 
-
 		WebElement eleF = waitF.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver driver) {
 				return driver.findElement(By.id("@id selector"));
 			}
 		});
-
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -100,32 +143,46 @@ public class Questions {
 
 		WebElement ele = driver.findElement(By.xpath("//img[contains(@id, 'hplogo')]")); 
 
-
-
+		driver.findElement(By.xpath("xpath")).getAttribute("Sttribute Name");
+		WebElement xpath1 =driver.findElement(By.xpath("xpath"));
+		xpath1.isDisplayed();
+		xpath1.isSelected();
+		xpath1.isEnabled();
+		
+		
 		driver.getWindowHandle();
 
 		Set<String> wHandles = driver.getWindowHandles();
 		// switch to default window
+		driver.switchTo().frame(0);
+		driver.switchTo().frame("Frame Name");
+		driver.switchTo().frame("WebElement");
 		driver.switchTo().defaultContent();
-
+		driver.switchTo().frame(" New Frame ");
+		
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 		alert.dismiss();
 		alert.getText();
 
 		Select sel = new Select(driver.findElement(By.xpath("")));
-		List<WebElement> options2 = sel.getOptions();
+		
 		sel.deselectAll();
 		sel.selectByIndex(0);
+		sel.deselectByIndex(0);
+		sel.selectByVisibleText("test");
 		
 		List<WebElement> options = sel.getOptions();
-		WebElement webElement = options.get(2);
-		ListIterator<WebElement> listIterator = options.listIterator();
+		
+		WebElement ele2 = options.get(2);
+		ListIterator<WebElement> ite = options.listIterator();
+		
+		ite.hasNext();
 
 		Actions act = new Actions(driver);
 		act.dragAndDrop(driver.findElement(By.id("")), driver.findElement(By.id("")));
 		act.build();
-		act.click(ele); // overloading
+		act.click(ele2); // overloading
 		act.click();
 
 		act.contextClick();
@@ -142,6 +199,7 @@ public class Questions {
 		driver.navigate().forward();
 		driver.navigate().back();
 
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
 		driver.manage().window().getPosition().getX();
 		driver.manage().window().getPosition().getX();
@@ -168,62 +226,5 @@ public class Questions {
 		windowHandles.iterator().next();
 		driver.switchTo().window("");
 		
-//		Absolute XPath  - /html/body/div[2]/div[1]/div/h4[1]/b/html[1]/body[1]/div[2]/div[1]/div[1]/h4[1]/b[1]
-//		Relative Xpath - //div[2]/div[1]/div[1]/h4[1]/b[1]
-//		Xpath=//input[@name='uid']
-//		Xpath=//input[@type='text']				
-//		Xpath=	//label[@id='message23']
-//		Xpath=	//input[@value='RESET']
-//		Xpath=//*[@class='barone']
-//		Xpath=//a[@href='http://demo.guru99.com/']
-//		Xpath= //img[@src='//cdn.guru99.com/images/home/java.png']
-
-//		Xpath=//*[contains(@name,'btn')]
-
-//		Xpath=//*[contains(text(),'here')]
-
-//		Xpath=//*[@type='submit' or @name='btnReset']
-//		Xpath=//*[@type='submit' and @name='btnReset']
-
-//		Xpath=//label[starts-with(@id,'message')]
-
-//		Xpath=//td[text()='UserID']
-		
-		
-		/*
-		 * Different Type of Axes method for defining  the Xpath
-		 * 
-		 * Child::
-		 * Following::
-		 * Following-sibling
-		 * Parent::
-		 * Ancestor:: 
-		 * Preceding::
-		 * Preceding-sibling
-		 * Descendant::
-		 * 
-		 * */
-		
-//		driver.findElement(By.xpath("@id[name='Submit']//following-sibling::td[2]]"));
-		
-//		Xpath=//*[text()='Enterprise Testing']//ancestor::div
-		
-//		driver.findElement(By.xpath("@id[name='Submit']//child::td[2]]"));
-//		driver.findElement(By.xpath("Xpath=//*[@id='rt-feature']//parent::div"));
-		
-//		Xpath=//*[@type='submit']//preceding::input		
-		
-//		driver.findElement(By.xpath("@id[name='Submit']//preceeding-sibling::td[2]]"));
-
-//		Xpath=//*[@id='rt-feature']//descendant::a[1]
-
-
-
-
-
-
-
 	}
-
-
 }

@@ -26,6 +26,7 @@ public class intiateDriver {
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.get("http://www.facebook.com");
 //			WebDriverWait wait = new WebDriverWait(driver, 10);
 //			wait.until(ExpectedConditions.elementToBeClickable(By.id("")));
 //			WebElement element = null;

@@ -21,13 +21,16 @@ public class Connection {
 		try {
 			output = new FileOutputStream("config.properties");
 			// set the properties value
-			prop.setProperty("database", "localhost");
-			prop.setProperty("dbuser", "oracleDB");
-			prop.setProperty("dbpassword", "password");
-			prop.setProperty("Name", "Lakshman");
+				
+				System.out.println("Property file is empty hence writing into the file");
+				prop.setProperty("database", "localhost");
+				prop.setProperty("dbuser", "oracleDB");
+				prop.setProperty("dbpassword", "password");
+				prop.setProperty("Name", "Lakshman");
 
-			/** null - save properties to project root folder*/
-			prop.store(output, null);
+				/** null - save properties to project root folder*/
+				prop.store(output, null);
+
 
 		} catch (IOException io) {
 			io.printStackTrace();

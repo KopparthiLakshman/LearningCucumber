@@ -28,7 +28,7 @@ public class StepDefinition extends DefaultProperties {
 //	public void openBrowser1() {
 //		driver = intiateDriver.getChromerDriver();
 //	}
-	
+
 	@Given("^Open chrome browser$")
 	public void openBrowser() {
 		driver = intiateDriver.getChromerDriver();

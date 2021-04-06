@@ -17,6 +17,8 @@ public class StartDriver {
 
 	@BeforeTest
 	public WebDriver getChromerDriver() {
+		
+//		Scanner sc = new Scanner(System.in);
 		System.setProperty("webdriver.chrome.driver", "D:\\EclipseWorkSpace_01_03_2015\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();

@@ -6,17 +6,20 @@ import java.io.IOException;
 
 public class ReadFileLineByLineUsingBufferedReader {
 
-	BufferedReader reader;
-	String line ;
+	public static void main(String[] args) {
+		readLineFromTxtFile();
+	}
 	
-	public String readLineFromTxtFile() {
+	public static String readLineFromTxtFile() {
+		BufferedReader reader;
+		String line = null ;
+		
 		try {
 			File src = new File("C:\\Share\\myfile.txt");
 			reader = new BufferedReader(new FileReader(src));
-			line = reader.readLine();
-			while (line != null) {
+			
+			while ((line = reader.readLine())!= null) {
 				System.out.println(line.trim());
-				line = reader.readLine();
 			}
 			reader.close();
 		} 
