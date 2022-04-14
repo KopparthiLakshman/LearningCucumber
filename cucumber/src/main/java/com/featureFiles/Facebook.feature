@@ -4,14 +4,12 @@ Background:
 And Open chrome browser
 @Enbd2End
 Scenario Outline: scenario description
-    Given Launch url "Testurl2" in browser
     When enter valid "<username>" and "<password>"
     Then close all instances
-    
+
     Examples:
     | username | password |
-    | laxman2.kumar@gmail.com | cancel |
-#    | maltrading@gmail.com | logout |
+		| username | password |
  
 @RegressionTest
 Scenario: scenario description for Regression Test

@@ -42,7 +42,7 @@ public class DefaultProperties {
 		
 		String browserName = prop.getProperty("BrowserName");
 		if(browserName.equalsIgnoreCase("chrome")){
-			System.setProperty("webdriver.chrome.driver", "D:\\EclipseWorkSpace_01_03_2015\\Drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		else if (browserName.equalsIgnoreCase("firefox")) {

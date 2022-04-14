@@ -1,6 +1,7 @@
 package steps;
 
 import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -37,7 +38,9 @@ public class StepDefinition extends DefaultProperties {
 	@Given("the following animals:")
 	public void the_following_animals(Map<String,String> dataTable ) {
 
-		Iterator<Entry<String, String>> iterator = dataTable.entrySet().iterator();
+		
+		ListIterator<Entry<String, String>>  iterator = (ListIterator<Entry<String, String>>) dataTable.entrySet().iterator();
+//		Iterator<Entry<String, String>> iterator = dataTable.entrySet().iterator();
 		
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next().getValue());
@@ -50,7 +53,7 @@ public class StepDefinition extends DefaultProperties {
 		Properties loadProperties = prop.LoadProperties();
 		String testcaseurl = loadProperties.getProperty(url).toString().trim();
 		System.out.println("Logging into url :: "+testcaseurl);
-		driver.get(testcaseurl);
+//		driver.get(testcaseurl);
 	}
 
 	
@@ -59,7 +62,8 @@ public class StepDefinition extends DefaultProperties {
 
 		driver.findElement(By.id("email")).sendKeys(username);
 		driver.findElement(By.id("pass")).sendKeys(password, Keys.ENTER);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+		System.out.println("userName :"+username+"   Password :"+password);
 	}
 
 	@Then("^close all instances$")

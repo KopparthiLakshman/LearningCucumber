@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 public class DataPorviderIntestNg {
 
 	int i =0;
-	@Test(dataProvider="DataProvider", description = " Run the test ")
-	public void test(String a, String b) {
+	@Test(dataProvider="Data", description = " Run the test ")
+	public void test(String a, String b, String c) {
 		i++;
-		System.out.println("UserName :: "+a +"  Password :: "+b +"  run " +i);
+		System.out.println("UserName :: "+a +"  Password :: "+b +"  Password 2 ::  "+c+ " :: Counter : "+i);
 	}
 	
 	@DataProvider()
@@ -19,7 +19,7 @@ public class DataPorviderIntestNg {
 	
 	@DataProvider(name = "Data")
 	public Object[][] DataProviderWithoutMethodName() {
-		return new Object[][] {{"user1","pass1"},{"user2","pass2"},{"user3","pass3"}};
+		return new Object[][] {{"user1","pass1","pass11"},{"user2","pass2","pass22"},{"user3","pass3","pass33"}};
 	}
 
 	@DataProvider()

@@ -10,7 +10,7 @@ import io.cucumber.testng.PickleWrapper;
 		,glue= "steps"
 		,dryRun = false 
 		,monochrome = true
-		,tags = {"@SmokeTest"}
+		,tags = {"@Enbd2End"}
 		)
 public class FacebookRunner extends AbstractTestNGCucumberTests/*CustomAbstractTestNGCucumberTests*/{
 	
